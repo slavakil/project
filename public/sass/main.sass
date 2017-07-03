@@ -1,0 +1,319 @@
+@import _variable
+@import _mixin
+@import _animations
+@import _bootstrap
+
+body
+	font-family: $mainFont
+	background: linear-gradient(270deg, #e91e63, #9c27b0, #673ab7, #3f51b5, #2196f3, #00bcd4, #009688, #4caf50, #cddc39, #ffc107, #ff5722)
+	background-size: 2200% 2200%
+	animation: backgroundGradient 10s $easeOutCirc infinite
+	font-size: 1.5em
+	color: #292b2c
+
+img
+	max-width: 100%
+
+footer
+	background-color: #ffffff
+	padding: 20px
+	margin-top: 3px
+
+h1, h2
+	text-align: center
+	position: relative
+	&:before
+		@include positionA(0, 20px, auto, 20px)
+		@include gradientLine
+	&:after
+		@include positionA(auto, 20px, 0, 20px)
+		@include gradientLine
+
+h3, h4
+	text-align: center
+	position: relative
+	&:after
+		@include positionA(auto, 20px, 0, 20px)
+		@include gradientLine
+
+a
+	color: #292b2c
+	text-decoration: none
+	position: relative
+	&:after
+		@include positionA(auto, 20px, 0, 20px)
+		@include gradientLine
+	&:hover
+		text-decoration: none
+		animation: textColor 5s $easeE infinite
+	&:active, &:focus
+		text-decoration: none
+
+.logo
+	font-size: 1.8em
+	color: #fff
+
+.authForm
+	background: rgba(255, 255, 255, 0.4)
+	height: 100%
+	padding: 20px
+	padding-bottom: 40px
+	margin-bottom: 10px
+	&_image_block
+		text-align: center
+	&_image
+		margin-top: 10px
+		margin-bottom: 20px
+	.form-control
+		font-size: 1.2em
+		&:focus
+			animation: textColor 5s $easeE infinite
+
+.i
+	border: none
+	cursor: pointer
+	position: absolute
+	top: 10px
+	right: 20px
+	display: block
+	&:hover
+		opacity: 0.5
+
+.voice
+	width: 50px
+	height: 50px
+	background: url("../img/voice.svg") no-repeat center
+	background-size: cover
+
+.unvoice
+	width: 50px
+	height: 50px
+	background: url("../img/unvoice.svg") no-repeat center
+	background-size: cover
+
+.emoji
+	display: inline-block
+	width: 20px
+	height: 20px
+	background: url("../img/emoji.png") no-repeat center
+	background-size: cover
+
+.wrapContent
+	height: auto
+	background: #fff
+
+.welcomeBlock
+	text-align: center
+	padding-bottom: 40px
+	img
+		margin-bottom: 15px
+
+.character
+	display: none
+	&+label
+		padding: 5px
+		margin: 20px
+		cursor: pointer
+	&:checked+label
+		border: 1px solid #FFFFFF
+		padding: 4px
+		animation: borderColor 5s $easeE infinite
+
+
+.wrapBar
+	padding: 15px
+	background: #eeeeee
+	strong
+		float: right
+		img
+			max-width: 36px
+			opacity: 0.8
+	.avatar
+		margin: 0 auto
+
+.todo-item
+	position: relative
+	margin: 10px 0
+	padding-left: 30px
+	padding-right: 56px
+	&.todo-old
+		label
+			color: #e91e63
+
+	.delete-todo
+		@include positionA(2px, 2px, auto, auto)
+		border: none
+		width: 25px
+		height: 25px
+		background: url("../img/trash.png") no-repeat center
+		background-size: cover
+		cursor: pointer
+		&:hover
+			opacity: 0.5
+	.view-todo
+		@include positionA(2px, 29px, auto, auto)
+		border: none
+		width: 25px
+		height: 25px
+		background: url("../img/search.png") no-repeat center
+		background-size: cover
+		cursor: pointer
+		&:hover
+			opacity: 0.5
+
+.checkbox
+	display: none
+	&:checked+label
+		text-decoration: line-through
+		&:before
+			content: ''
+			@include positionA(5px, auto, auto, -2px)
+			width: 25px
+			height: 25px
+			background: url("../img/check.png") no-repeat center
+			background-size: cover
+	&+label
+		&:before
+			content: ''
+			@include positionA(5px, auto, auto, -2px)
+			width: 25px
+			height: 25px
+			background: url("../img/box.png") no-repeat center
+			background-size: cover
+
+.block404
+	strong
+		width: 100%
+		text-align: center
+	p
+		line-height: 1
+		text-align: center
+		width: 100%
+		font-size: 20em
+
+.mainBlock
+	padding: 0
+
+.imgNav
+	background: #eeeeee
+	padding: 20px
+	img
+		height: 60px
+		max-height: 110px
+	.navItem
+		text-align: center
+		cursor: pointer
+		opacity: 0.6
+		&:hover
+			opacity: 1
+		&.activeItem
+			animation: textColor 5s $easeE infinite
+			opacity: 1
+
+#mainContentBlock
+	padding: 10px
+
+.teamItem
+	padding: 15px
+	position: relative
+	.color
+		width: 50px
+		height: 50px
+		border-radius: 25px
+		display: inline-block
+	h4
+		vertical-align: top
+		display: inline-block
+	.go
+		@include positionA(25px, 20px, auto, auto)
+		width: 35px
+		height: 25px
+		background: url("../img/next.png") no-repeat center
+		background-size: cover
+		text-decoration: none
+		&:hover
+			opacity: 0.6
+.confirmInvite
+	@include positionA(25px, 60px, auto, auto)
+	width: 25px
+	height: 25px
+	background: url("../img/check.png") no-repeat center
+	background-size: cover
+
+.wrapTeam
+	.teamName
+		animation: textColorBtoW 5s $easeE infinite
+		font-size: 1.7em
+	.wrapTeamBar
+		padding: 20px
+
+.userItem
+	margin-bottom: 20px
+	.userCharacter
+		width: 100px
+		height: 100px
+		background-size: cover
+		background-position: 0 0
+		background-repeat: no-repeat
+		display: inline-block
+	.userData
+		vertical-align: top
+		margin-left: 20px
+		display: inline-block
+		width: auto
+
+.icon-edit
+	position: relative
+	padding-left: 35px
+	&:before
+		@include positionA(5px, auto, auto, 5px)
+		content: ''
+		width: 25px
+		height: 25px
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		background-image: url("../img/edit.png")
+
+.icon-send
+	position: relative
+	padding-left: 60px
+	&:before
+		@include positionA(7px, auto, auto, 5px)
+		content: ''
+		width: 50px
+		height: 25px
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		background-image: url("../img/send.png")
+
+.eventItem
+	padding: 15px
+	position: relative
+	h3
+		@include positionA(20px, auto, auto, 20px)
+		animation: textColorBtoW 5s $easeE infinite
+	.color
+		width: 100%
+		height: 20px
+	.delete-event
+		@include positionA(20px, 20px, auto, auto)
+		border: none
+		width: 25px
+		height: 25px
+		background: url("../img/trash.png") no-repeat center
+		background-size: cover
+		cursor: pointer
+		&:hover
+			opacity: 0.5
+	.view-event
+		@include positionA(20px, 50px, auto, auto)
+		border: none
+		width: 25px
+		height: 25px
+		background: url("../img/search.png") no-repeat center
+		background-size: cover
+		cursor: pointer
+		&:hover
+			opacity: 0.5
